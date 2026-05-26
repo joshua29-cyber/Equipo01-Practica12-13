@@ -2,7 +2,7 @@
 
 -  - Jaqueline 
 - 322164583 - Oseguera Salinas Joshua Jacob
--  - Soto Fuentes Christian Ulises
+- 322216754 - Soto Fuentes Christian Ulises
 
 ---
 
@@ -91,10 +91,18 @@ El gran peligro al diseñar algoritmos en OpenMP es caer en el "cuello de botell
 
 Dominar herramientas asíncronas como master y la cláusula nowait permite eliminar esos tiempos muertos y mantener el programa lo más libre, fluido y asíncrono posible. La regla de oro de la sincronización fina es dar vía libre al procesamiento cooperativo y aplicar los frenos estricto o barreras única y exclusivamente cuando la integridad de la memoria esté verdaderamente en riesgo.
 
----
-
-# 
 
 ---
 
-https://canva.link/q68vrecijoq5jzj
+# Presentacion 
+
+- https://canva.link/q68vrecijoq5jzj
+
+---
+
+# Fuentes
+
+- Chapman, B., Jost, G., & van der Pas, R. (2007). Using OpenMP: Portable Shared Memory Parallel Programming. MIT Press.
+- Lawrence Livermore National Laboratory. (s.f.). OpenMP Tutorial. High Performance Computing (HPC). https://hpc.llnl.gov/tutorials/openmp
+- OpenMP Architecture Review Board. (2020). OpenMP Application Program Interface Specification Version 5.1. https://www.openmp.org/specifications/
+
