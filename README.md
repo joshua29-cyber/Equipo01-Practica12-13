@@ -1,6 +1,6 @@
 # Equipo01-Practica12-13
 
--  - Jaqueline 
+- 322332900 - Leyva Hernández Jacqueline Paola
 - 322164583 - Oseguera Salinas Joshua Jacob
 - 322216754 - Soto Fuentes Christian Ulises
 
