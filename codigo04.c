@@ -1,5 +1,5 @@
-#Código 4: Optimización con nowait
-#Objetivo en la expo: Mostrar cómo logramos que la tarea la haga un único proceso cualquiera (como en single), pero eliminando la barrera para que los demás sigan trabajando de largo sin perder tiempo ocioso.
+//Código 4: Optimización con nowait
+//Objetivo en la expo: Mostrar cómo logramos que la tarea la haga un único proceso cualquiera (como en single), pero eliminando la barrera para que los demás sigan trabajando de largo sin perder tiempo ocioso.
 
 #include <iostream>
 #include <omp.h>
