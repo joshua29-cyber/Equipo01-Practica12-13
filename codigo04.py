@@ -1,30 +1,29 @@
 #Código 4: Optimización con nowait
 #Objetivo en la expo: Mostrar cómo logramos que la tarea la haga un único proceso cualquiera (como en single), pero eliminando la barrera para que los demás sigan trabajando de largo sin perder tiempo ocioso.
 
-import multiprocessing
-import time
+#include <iostream>
+#include <omp.h>
+#include <unistd.h> // sleep()
 
-def tarea(id_proceso, bandera_ejecutado):
-    with bandera_ejecutado.get_lock():
-        if not bandera_ejecutado.value:
-            bandera_ejecutado.value = True
-            print(f"[Proceso {id_proceso}] ---> Ejecutando SINGLE con NOWAIT. Tardaré 3 segundos...")
-            time.sleep(3)
-            print(f"[Proceso {id_proceso}] ---> SINGLE con NOWAIT finalizado.")
+using namespace std;
 
-    print(f"[Proceso {id_proceso}] Avanzó sin esperar a que el single terminara.")
+int main() {
 
-if __name__ == "__main__":
-    print("=== DEMO 4: SIMULACION OMP SINGLE NOWAIT ===\n")
-    
-    num_procesos = 4
-    ejecutado = multiprocessing.Value('b', False)
-    
-    procesos = []
-    for i in range(num_procesos):
-        p = multiprocessing.Process(target=tarea, args=(i, ejecutado))
-        procesos.append(p)
-        p.start()
+    cout << "=== DEMO 4: OMP SINGLE NOWAIT ===\n\n";
 
-    for p in procesos:
-        p.join()
+    #pragma omp parallel num_threads(4)
+    {
+        int id = omp_get_thread_num();
+
+        #pragma omp single nowait
+        {
+            cout << "[Hilo " << id << "] ---> Ejecutando SINGLE con NOWAIT. Tardaré 3 segundos...\n";
+            sleep(3);
+            cout << "[Hilo " << id << "] ---> SINGLE con NOWAIT finalizado.\n";
+        }
+
+        cout << "[Hilo " << id << "] Avanzó sin esperar al single.\n";
+    }
+
+    return 0;
+}
